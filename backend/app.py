@@ -3,6 +3,8 @@ from flask_cors import CORS
 from models import db, User
 from routes.auth import auth_bp
 from routes.admin import admin_bp
+from routes.company import company_bp
+from routes.student import student_bp
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key'
@@ -13,6 +15,8 @@ db.init_app(app)
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(admin_bp)
+app.register_blueprint(company_bp)
+app.register_blueprint(student_bp)
 
 
 def create_admin():
