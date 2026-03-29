@@ -16,7 +16,7 @@ def login():
         return jsonify({"error": "Invalid credentials"}), 401
     
     if(user.role == 'company'):
-        comapny = Company.query.filter_by(user_id = user.user_id).first()
+        comapny = Company.query.filter_by(user_id = user.id).first()
         if(comapny.approval_status != "Approved"):
             return jsonify({"error": "Please wait till your company is approved."}), 403
 

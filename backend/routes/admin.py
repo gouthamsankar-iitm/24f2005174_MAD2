@@ -37,7 +37,7 @@ def company_approve(id):
 
     return jsonify({"message": "Comapny approved"})
 
-@admin_bp.route('/admin/company<int:id>/reject', methods = ['POST'])
+@admin_bp.route('/admin/company/<int:id>/reject', methods = ['POST'])
 def company_reject(id):
 
     company = Company.query.get(id) 
